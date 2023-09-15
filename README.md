@@ -1,2 +1,2 @@
-# advanced-system-builder
-Automatically install a perfect configuration on arch linux.
+# Advanced System Builder
+Automatically install a perfect configuration on Arch Linux.
