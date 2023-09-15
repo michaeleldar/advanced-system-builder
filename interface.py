@@ -56,7 +56,7 @@ def choose_config():
         if y == int(answer):
             data = json.loads(open(file).read())
             for item in data["install"]["packages"]:
-                system(f"sudo pacman -S {item} --no-confirm")
+                system(f"sudo pacman -S {item} --noconfirm")
         y += 1
 
 
