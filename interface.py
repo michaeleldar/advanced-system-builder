@@ -11,17 +11,16 @@ def curl(url):
 
 
 def main_menu():
-    while True:
-        print("Chose an option by specifying the number:")
-        print("1. Use a configuration from a repository")
-        print("2. Use a configuration from a file")
-        choice = input("Make your choice: ")
-        if choice == "1":
-            repo_menu()
-            break
-        elif choice == "2":
-            file_menu()
-            break
+    print("Chose an option by specifying the number:")
+    print("1. Use a configuration from a repository")
+    print("2. Use a configuration from a file")
+    choice = input("Make your choice: ")
+    if choice == "1":
+        repo_menu()
+    elif choice == "2":
+        file_menu()
+    else:
+        main_menu()
 
 
 def repo_menu():
