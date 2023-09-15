@@ -1,0 +1,9 @@
+{
+    "name": "Test",
+    "recommended": true,
+    "install": {
+        "packages": [
+            "neofetch"
+        ]
+    }
+}

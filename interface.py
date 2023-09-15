@@ -1,6 +1,7 @@
 print("Welcome to the Advanced System Builder!")
 import urllib.request
-from os import system
+from os import system, listdir
+import json
 
 
 def curl(url):
@@ -32,8 +33,31 @@ def repo_menu():
             c = curl(config)
             d = open(f"n{x}.py", "w")
             d.write(c)
-            system(f"python3 n{x}.py")
+            choose_config()
             x += 1
+
+
+def choose_config():
+    files = listdir(".")
+    newfiles = []
+    for file in files:
+        if file.startswith("n"):
+            newfiles.append(file)
+
+    print("Choose your configuration by number: ")
+    x = 1
+    for file in newfiles:
+        data = json.loads(open(file).read())
+        print(f"{x}: {data['name']}")
+        x += 1
+    answer = input("What is your choice?")
+    y = 1
+    for file in newfiles:
+        if y == int(answer):
+            data = json.loads(open(file).read())
+            for item in data["install"]["packages"]:
+                system(f"sudo pacman -S {item} --no-confirm")
+        y += 1
 
 
 def file_menu():
