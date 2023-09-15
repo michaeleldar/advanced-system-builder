@@ -34,3 +34,14 @@ def repo_menu():
             d = open(f"n{x}.py", "w")
             d.write(c)
             system(f"python3 n{x}.py")
+            x += 1
+
+
+def file_menu():
+    file = open(input("Enter the name of your config file: ")).read()
+    d = open(f"n.py", "w")
+    d.write(file)
+    system(f"python3 n.py")
+
+
+main_menu()
